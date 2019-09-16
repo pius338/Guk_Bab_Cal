@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top|center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/GB_img"
+        android:layout_width="122dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/art_14927036061773_f148b7"/>
+
+    <TextView
+        android:id="@+id/GB_Text_0"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="그거 살 돈이면"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/GB_Text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="뜨끈~하고 든든~한 국밥이"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/GB_num"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"/>
+
+        <TextView
+            android:id="@+id/GB_Text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그릇인데?"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="150dp">
+
+        <EditText
+            android:id="@+id/GB_num_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="숫자를 입력하세요"
+            android:textColor="#7C000000" />
+
+        <Button
+            android:id="@+id/GB_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="입력" />
+
+    </LinearLayout>
+
+</LinearLayout>
