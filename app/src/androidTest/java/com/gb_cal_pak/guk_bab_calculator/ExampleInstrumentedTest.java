@@ -1,4 +1,4 @@
-package com.example.guk_bab_calculator;
+package com.gb_cal_pak.guk_bab_calculator;
 
 import android.content.Context;
 

@@ -10,8 +10,8 @@
         android:id="@+id/GB_img"
         android:layout_width="122dp"
         android:layout_height="126dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="60dp"
         app:srcCompat="@drawable/art_14927036061773_f148b7"/>
 
     <TextView
@@ -19,15 +19,15 @@
         android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="그거 살 돈이면"
-        android:textSize="26sp"
+        android:text="그 돈이면"
+        android:textSize="23sp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/GB_Text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="뜨끈~하고 든든~한 국밥이"
-        android:textSize="26sp"
+        android:textSize="23sp"
         android:textStyle="bold" />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="그릇인데?"
-            android:textSize="26sp"
+            android:textSize="23sp"
             android:textStyle="bold"/>
     </LinearLayout>
 
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="35dp">
 
         <EditText
             android:id="@+id/GB_num_edit"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="숫자를 입력하세요"
+            android:hint="쓸 돈을 입력하세요"
             android:textColor="#7C000000" />
 
         <Button

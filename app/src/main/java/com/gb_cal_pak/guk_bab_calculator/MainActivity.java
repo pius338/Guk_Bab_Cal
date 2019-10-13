@@ -1,7 +1,10 @@
-package com.example.guk_bab_calculator;
+package com.gb_cal_pak.guk_bab_calculator;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +26,19 @@ public class MainActivity extends AppCompatActivity {
         final EditText edit_num = findViewById(R.id.GB_num_edit);
         final TextView GB_num = findViewById(R.id.GB_num);
 
+        View view = getWindow().getDecorView();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (view != null) {
+                // 23 버전 이상일 때 상태바 하얀 색상에 회색 아이콘 색상을 설정
+                view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                getWindow().setStatusBarColor(Color.parseColor("#f2f2f2"));
+            }
+        }else if (Build.VERSION.SDK_INT >= 21) {
+            // 21 버전 이상일 때
+            getWindow().setStatusBarColor(Color.BLACK);
+        }
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     output = Integer.valueOf(input) / 7000.0;
                 }catch(NumberFormatException e){
                     Log.e("Error", e.toString());
-                    Toast.makeText(MainActivity.this, "와 갑부 개발자 국밥 한 그릇만 사주십쇼.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "그 돈이면 국밥집을 차리겠다.", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -42,4 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
 
