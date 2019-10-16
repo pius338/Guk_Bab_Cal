@@ -3,10 +3,12 @@ package com.gb_cal_pak.guk_bab_calculator;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,21 +44,34 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 input = edit_num.getText().toString();
-                try{
-                    output = Integer.valueOf(input) / 7000.0;
-                }catch(NumberFormatException e){
-                    Log.e("Error", e.toString());
-                    Toast.makeText(MainActivity.this, "그 돈이면 국밥집을 차리겠다.", Toast.LENGTH_SHORT).show();
+                if(input.equals("")){
+                    Toast.makeText(MainActivity.this, "뭐요 왜요", Toast.LENGTH_SHORT).show();
+                }else {
+
+                    try {
+                        output = Integer.valueOf(input) / 7000.0;
+                    } catch (NumberFormatException e) {
+                        Log.e("Error", e.toString());
+                        Toast.makeText(MainActivity.this, "그 돈이면 국밥집을 차리겠다.", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
-
-                    GB_num.setText(String.valueOf(Math.round(output * 10) / 10.0));
+                GB_num.setText(String.valueOf(Math.round(output * 10) / 10.0));
 
             }
 
         });
     }
+
+    /*public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        return true;
+    }*/
+
+
 }
 
 
