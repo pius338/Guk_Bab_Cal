@@ -17,7 +17,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     String input;
-    double output;
+    int output_0;
+    int output_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,12 @@ public class MainActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.GB_btn);
 
         final EditText edit_num = findViewById(R.id.GB_num_edit);
-        final TextView GB_num = findViewById(R.id.GB_num);
+        final TextView GB_num_0 = findViewById(R.id.GB_num_0);
+        final TextView GB_num_1 = findViewById(R.id.GB_num_1);
+        final TextView GB_Text_1 = findViewById(R.id.GB_Text_1);
+        final TextView GB_Text_2 = findViewById(R.id.GB_Text_2);
+        final TextView GB_Text_3 = findViewById(R.id.GB_text_3);
+
 
         View view = getWindow().getDecorView();
 
@@ -51,14 +57,31 @@ public class MainActivity extends AppCompatActivity {
                 }else {
 
                     try {
-                        output = Integer.valueOf(input) / 7000.0;
+                        output_0 = Integer.valueOf(input) / 6000;
+                        output_1 = Integer.valueOf(input) % 6000;
                     } catch (NumberFormatException e) {
                         Log.e("Error", e.toString());
                         Toast.makeText(MainActivity.this, "그 돈이면 국밥집을 차리겠다.", Toast.LENGTH_SHORT).show();
                     }
                 }
 
-                GB_num.setText(String.valueOf(Math.round(output * 10) / 10.0));
+
+                if (output_0 == 0) {
+                    GB_num_0.setText(String.valueOf(6000 - output_1));
+                    GB_num_1.setText(null);
+                    GB_Text_1.setText(null);
+                    GB_Text_1.setTextSize(0);
+                    GB_Text_2.setText("원만 더 모아서");
+                    GB_Text_3.setText("국밥 사 먹겠다.");
+                } else {
+                    GB_Text_1.setTextSize(23);
+                    GB_Text_1.setText("뜨끈~하고 든든~한 국밥을");
+                    GB_Text_2.setText("그릇 먹고도");
+                    GB_Text_3.setText("원이 남는데?");
+                    GB_num_0.setText(String.valueOf(output_0));
+                    GB_num_1.setText(String.valueOf(output_1));
+                }
+
 
             }
 
